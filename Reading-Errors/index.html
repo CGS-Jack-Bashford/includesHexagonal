@@ -1,0 +1,34 @@
+<html lang="en">
+    <head>
+        <title>A Large Bank</title>
+        <meta charset="utf-8" />
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+        <script>
+            var correctURL = "write.json";
+            var wrongURL = "wrong.json";
+            var currentURL = wrongURL;
+            var figuredItOut = false;
+            function getJSON() {
+                $.getJSON(currentURL, res => {
+                    alert("Well done!");
+                    $(".title").text("You found (and fixed) the error!");
+                    $(".subtitle").text(res.flag);
+                    figuredItOut = true;
+                });
+            }
+            getJSON();
+            alert("Look at the code and console to figure out what to do.");
+        </script>
+    </head>
+    <body>
+        <section class="hero is-success is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Something broke! Look in the console to find your error.</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
